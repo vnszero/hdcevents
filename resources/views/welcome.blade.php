@@ -31,5 +31,20 @@
         @else
             <p>O nome é outro: {{ $name }}</p>
         @endif
+        @for($i = 0; $i < count($arr); $i++)
+            <p>{{ $arr[$i] }} - {{ $i }}</p>
+        @endfor
+
+        @php
+            $name = 'João';
+            // hidden notes?
+            echo $name;
+        @endphp
+
+        {{-- Este é o comentário do Blade --}}
+
+        @foreach($names as $name)
+            <p>{{ $loop->index }} -> {{ $name }}</p>
+        @endforeach
     </body>
 </html>
