@@ -4,8 +4,10 @@
 
 @section('content')
 
-    @if($id != null)
-        <p>Exibindo Produto Id: {{ $id }}</p>
+    <h1>Produtos</h1>
+
+    @if($search != '')
+        <p>Estou procurando por {{ $search }}</p>
     @endif
 
 @endsection
