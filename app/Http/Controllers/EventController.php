@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-// php8.3 artisan make:controller EventController
 class EventController extends Controller
 {
     public function index(){
