@@ -4,8 +4,8 @@
 
 #cards-container .card {
     border-radius: 10px;
-    flex: 1 1 0;
-    margin: 5px;
+    flex: 1 1 24%;
+    margin: .5%;
     max-width: 25%;
     padding: 0;
 }
