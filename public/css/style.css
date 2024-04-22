@@ -77,6 +77,15 @@
     margin: 0;
 }
 
+#items-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#items-list li {
+    display: flex;
+}
+
 #navbar {
     background-color: #FFF;
     justify-content: space-between;
