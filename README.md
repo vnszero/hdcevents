@@ -64,3 +64,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## To run in dev mode
+in project directory:
+$ php8.3 artisa serve
+$ npm run dev
+
+sql server like XAMPP

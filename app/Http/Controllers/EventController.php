@@ -21,7 +21,7 @@ class EventController extends Controller
         } else {
             $events = Event::all();
         }
-        
+
         return view('welcome',['events' => $events, 'search' => $search]);
 
     }
@@ -56,6 +56,9 @@ class EventController extends Controller
             // prepare to save a link in database
             $event->image = $imageName;
         }
+
+        $user = auth()->user();
+        $event->user_id = $user->id;
 
         $event->save();
 
