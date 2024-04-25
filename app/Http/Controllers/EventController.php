@@ -82,7 +82,9 @@ class EventController extends Controller
 
         $events = $user->events;
 
-        return view('events.dashboard', ['events' => $events]);
+        $guestInEvents = $user->guestInEvents;
+
+        return view('events.dashboard', ['events' => $events, 'guestInEvents' => $guestInEvents]);
     }
 
     public function destroy($id) {
