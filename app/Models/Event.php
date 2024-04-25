@@ -17,6 +17,10 @@ class Event extends Model
 
     protected $guarded = [];
 
+    public function guests() {
+        return $this->belongsToMany('App\Models\User');
+    }
+
     public function user() {
         return $this->belongsTo('APP\Models\User');
     }
