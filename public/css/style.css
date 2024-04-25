@@ -168,6 +168,10 @@
     margin: 30px 0;
 }
 
+.dashboard-events-container form {
+    display: inline-block;
+}
+
 .dashboard-events-container th {
     width: 25%;
 }
