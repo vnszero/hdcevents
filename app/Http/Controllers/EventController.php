@@ -70,10 +70,24 @@ class EventController extends Controller
     public function show($id) {
         $items_portuguese = ["Cadeiras", "Palco", "Bebida", "Comida", "Brindes"];
         $event = Event::findOrFail($id);
+        $user = auth()->user();
+        $hasUserJoined = false;
+
+        // security
+        // to avoid multiple user confirmation in same event
+        if($user) {
+            $userEvents = $user->guestInEvents->toArray();
+
+            foreach($userEvents as $userEvent) {
+                if($userEvent['id'] == $id){
+                    $hasUserJoined = true;
+                }
+            }
+        }
 
         $eventOwner = User::where('id', $event->user_id)->first()->toArray();
 
-        return view('events.show', ['event' => $event, 'items_portuguese' => $items_portuguese, 'eventOwner' => $eventOwner]);
+        return view('events.show', ['event' => $event, 'items_portuguese' => $items_portuguese, 'eventOwner' => $eventOwner, 'hasUserJoined' => $hasUserJoined]);
     }
 
     public function dashboard() {
